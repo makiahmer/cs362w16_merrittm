@@ -1,0 +1,55 @@
+/*******************************************************************************************
+** Tester		:	Makiah Merritt
+** Testee		:	Makiah Merritt (my dominion.c)
+** Date Found	:	ASDF
+** Severity		:	High
+** Priority		:	Average
+*******************************************************************************************/
+==== DESCRIPTION ====
+Card effect did not perform desired/expected action on the dominion code.
+
+==== CAUSE ====
+As part of my bugs for Assignment 1 I deleted a line of code from the adventurer card effect 
+responsible for drawing a card.
+
+==== IMPACT ====
+Because the function never drew a card the function would repeat the same action over and 
+over again.
+
+==== DEBUGGING PROCESS ====
+I found this bug while building my adventurer card test for assignment three. Because I knew 
+something was wrong when I kept getting the same return from the adventurer card effect I 
+decided to walk through the process using Visual Studio's debugger (Visual Studio being my 
+primary IDE). As might be expected I threw a breakpoint at the start of the card effects 
+process and walked through a few times before finding my issue.
+
+In correspondence with Agans' rules (based off of lesson 19):
+	Rule #1:	At this point in development I was fairly accomodated with the dominion code
+				to know that the issue was arrising when the card effect function was called
+				as such I didn't need to walk through everything else incorporated with 
+				playing the card; although I did for good measure.
+	
+	Rule #2:	This rule applies in the context that I knew the process was failing. Even
+				though I didn't explicitly "Make It Fail."
+	
+	Rule #3:	This rule didn't really apply as I knew the issue was somewhere in the card
+				effect process, knowing this I went directly to walking through the process.
+	
+	Rule #4:	This rule didn't apply.
+	
+	Rule #5:	This rule didn't apply as I was able to easily identify the issue after a 
+				couple walk throughs. There was a lightbulb that went off as if to say 
+				"Hey! We're supposed to be drawing a card at this portion of the code. But
+				where are we initiating a draw?"
+	
+	Rule #6:	This rule didn't really apply as the process wasn't that involved. As 
+				explained in #5 the process of finding the issue didn't take long. However, 
+				I should've made a note while doing my assignment 1 edits in case I happened 
+				across the bug, which I did.
+	
+	Rule #7:	This rule didn't apply.
+	
+	Rule #8:	This rule didn't apply.
+	
+	Rule #9:	This rule didn't apply as I needed to fix the bug in order for my adventurer 
+				test to run.

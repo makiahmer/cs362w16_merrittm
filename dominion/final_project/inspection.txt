@@ -1,0 +1,84 @@
+/*******************************************************************************************
+** Inspector	:	Makiah Merritt
+** Inspectee	:	Steven Powers
+** Guests		:	Griffin Gonzales
+** Reliability	:	90%
+** Problem Statement:
+** 		Organize and moderate an online software inspection of one of your classmates 
+** 		implementations (with their permission!). Document the process in inspection.txt. 
+** 		Ideally, if you lead an inspection for X, X leads an inspection for you. Make sure 
+** 		you have at least 2 other participants. Describe the level of formality, and any 
+** 		bugs found. This probably works best if groups of four work together, with each 
+** 		person leading 1 inspection and each implementation receiving 1 inspection.
+*******************************************************************************************/
+
+==== FORMALITY ====
+Informal in person meeting.
+
+
+==== GOALS ====
+Check reliability of code on a basis of code coverage and variation between multiple
+dominion.c files.
+
+
+==== TESTS ====
+CATEGORY & TEST						BEST COVERAGE 		SUCCESSFUL RUNS		BUGS FOUND		LIMITATION
+Unit Test:
+1) Play Card						20.73%				5/5					0				10 tests/run
+2) Update Coins						21.07%				5/5					0				10 tests/run
+3) Full Deck Count					22.63%				5/5					0				10 tests/run
+4) Buy Card							32.47%				5/5					0				10 tests/run
+
+Card Tests:
+1) Steward							41.45%				5/5					0				10 tests/run
+2) Smithy							44.73%				5/5					0				10 tests/run
+3) Great Hall						46.98%				5/5					0				10 tests/run
+4) Village							46.98%				5/5					0				10 tests/run
+
+Random Tests:
+1) Remodel							29.19%				5/5					0				100 tests/run
+2) Adventurer						16.58%				5/5					0				15 tests/run
+3) Dominion Implementation			73.06%				4/9					2				1 test/run with 300 turn max
+
+
+==== PROCESS ====
+In our inspection setting I ran all of the tests I had prepared throughout the term 
+on the Stevens code. Because of time each test was limited to whatever could run 
+within 5 min.  After each (full) test run we inspected the gcov measurement, back 
+traced the log of events to see if there was anything abnormal/buggy (my tests output 
+success/failure messages for internal operations).
+
+- Findings -
+My unit and card tests proved to be of little interest as the Stevens code performed as 
+expected. Discussing with Steven, he didn't modify the code in these easily reachable functions
+in such a way that their effect was altered from what was expected.
+
+It appeared that the Stevens code faulted similarly to mine in the chances of running into
+infinite loops with my random dominion tester. I.e. The first run found a card (we didn't 
+capture which) that ran into an infinite loop because it was too expensive to purchase. On 
+the second and fifth runs we found that the tester segfaulted in the function discardCard 
+when the tester played "Embargo" with choices [21, 0, 0] (run two) and [22, 0, 0] (run five). 
+The segfault occured at the statement to "replace discarded card with last card in hand."
+However, the third and fourth runs went without fault.
+
+Finally, after running each of my test files on the Stevens dominion.c file I 
+proceeded to do a side by side comparison of our dominion.c files. Initial work had to
+be done in the order of creating similar code formatting (namely tabs/whitespace).
+
+
+==== BUGS FOUND ====
+There were only two issues found in Stevens implementation. First was that of infinitely 
+looping in a cards effect because the card was too expensive. Second was the segfaulting of 
+the Embargo card. These two issues were also common to my dominion implementation, although 
+my implementation haulted more frequently with feast. Additionally, with the infinite loop 
+there is a chance that it was an issue of my tester vs. a card effect, however, there is the 
+chance the tester would exit out of the infinite loop if it captures a desired random value. 
+
+
+==== SUMMARY ====
+Running the game through sensical tests (unit and card tests) Steven's dominion implementation
+performs admirably. As might be expected the implementation is adversely affected by random 
+testing which also affecting mine I cannot place any fault to Stevens implementation. As such
+I would expect this implementation to run 100% of the time without error if its given expected 
+values. However, as values can't always be guranteed I would probably bump this down by 10% 
+for the unexpected.

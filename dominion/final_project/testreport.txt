@@ -1,0 +1,51 @@
+/************************************************************************************
+** Inspector	:	Makiah Merritt
+** Inspectee	:	Steven Powers, Griffin Gonsalves
+** Date			:	03/13/2016
+** Problem Statement:
+** 		Write a test report, in pdf format, describing your experience testing Dominion. 
+** 		Document in detail, including code coverage information, the status and your view 
+** 		of the reliability of the Dominion code of at least two of your classmates. This 
+** 		file is submitted as testreport.pdf in your dominion directory. Your test report 
+** 		should have a minimum of 1,000 words of text.
+************************************************************************************/
+
+
+Griffin Implementation
+CATEGORY & TEST						BEST COVERAGE
+Unit Test:
+1) Play Card						21.58%
+2) Update Coins						21.92%
+3) Full Deck Count					23.46%
+4) Buy Card							33.22%
+
+Card Tests:
+1) Steward							38.70%
+2) Smithy							42.12%
+3) Great Hall						44.35%
+4) Village							44.35%
+
+Random Tests:
+1) Remodel							28.42%
+2) Adventurer						16.44%
+3) Dominion Implementation			76.20%
+
+
+Stevens Dominion
+CATEGORY & TEST						BEST COVERAGE
+Unit Test:
+1) Play Card						20.73%
+2) Update Coins						21.07%
+3) Full Deck Count					22.63%
+4) Buy Card							32.47%
+
+Card Tests:
+1) Steward							41.45%
+2) Smithy							44.73%
+3) Great Hall						46.98%
+4) Village							46.98%
+
+Random Tests:
+1) Remodel							29.19%
+2) Adventurer						16.58%
+3) Dominion Implementation			73.06%
