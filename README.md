@@ -1,2 +1,2 @@
 # cs362w16_merrittm
-Makiah Merritt's repository
+Course files for CS 362 - Software Engineering II at OSU
